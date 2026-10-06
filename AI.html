@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Book Assistant</title>
+
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #222;
+        }
+
+        label {
+            display: block;
+            margin: 14px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        input {
+            margin-right: 10px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 25px;
+            border: none;
+            background-color: #222;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #444;
+        }
+
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .book {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Book Assistant</h1>
+
+    <p class="intro">
+        Select your preferences to get a personalized book roadmap.
+    </p>
+
+
+    <h3>1. What is your goal?</h3>
+
+    <label>
+        <input type="radio" name="goal" value="programming">
+        Learn Programming
+    </label>
+
+    <label>
+        <input type="radio" name="goal" value="web">
+        Learn Web Development
+    </label>
+
+    <label>
+        <input type="radio" name="goal" value="ai">
+        Learn AI & Machine Learning
+    </label>
+
+    <label>
+        <input type="radio" name="goal" value="dsa">
+        Prepare for Coding Interviews
+    </label>
+
+    <label>
+        <input type="radio" name="goal" value="academic">
+        Academic / College Studies
+    </label>
+
+
+    <h3>2. What is your current level?</h3>
+
+    <label>
+        <input type="radio" name="level" value="beginner">
+        Beginner
+    </label>
+
+    <label>
+        <input type="radio" name="level" value="intermediate">
+        Intermediate
+    </label>
+
+    <label>
+        <input type="radio" name="level" value="advanced">
+        Advanced
+    </label>
+
+
+    <h3>3. What is your budget?</h3>
+
+    <label>
+        <input type="radio" name="budget" value="low">
+        Below ₹500
+    </label>
+
+    <label>
+        <input type="radio" name="budget" value="medium">
+        ₹500 - ₹1000
+    </label>
+
+    <label>
+        <input type="radio" name="budget" value="high">
+        Above ₹1000
+    </label>
+
+
+    <button onclick="generateRoadmap()">
+        Generate AI Roadmap
+    </button>
+
+
+    <div id="result"></div>
+
+</div>
+
+
+<script>
+
+function generateRoadmap() {
+
+    let goal = document.querySelector(
+        'input[name="goal"]:checked'
+    );
+
+    let level = document.querySelector(
+        'input[name="level"]:checked'
+    );
+
+    let budget = document.querySelector(
+        'input[name="budget"]:checked'
+    );
+
+    let result = document.getElementById("result");
+
+
+    if (!goal || !level || !budget) {
+
+        result.innerHTML =
+            "<p>Please select all the options.</p>";
+
+        return;
+    }
+
+
+    let books = [];
+
+
+    if (goal.value === "programming") {
+
+        books = [
+            "Python Crash Course",
+            "Automate the Boring Stuff with Python"
+        ];
+
+    }
+
+    else if (goal.value === "web") {
+
+        books = [
+            "HTML and CSS",
+            "JavaScript: The Definitive Guide"
+        ];
+
+    }
+
+    else if (goal.value === "ai") {
+
+        books = [
+            "Hands-On Machine Learning",
+            "Deep Learning"
+        ];
+
+    }
+
+    else if (goal.value === "dsa") {
+
+        books = [
+            "Data Structures and Algorithms",
+            "Cracking the Coding Interview"
+        ];
+
+    }
+
+    else if (goal.value === "academic") {
+
+        books = [
+            "Data Structures Using Python",
+            "Computer Organization"
+        ];
+
+    }
+
+
+    let output = "";
+
+    output += "<h2>Your AI Book Roadmap</h2>";
+
+    output += "<p><b>Goal:</b> " +
+              goal.value +
+              "</p>";
+
+    output += "<p><b>Level:</b> " +
+              level.value +
+              "</p>";
+
+    output += "<p><b>Budget:</b> " +
+              budget.value +
+              "</p>";
+
+
+    output += "<h3>Recommended Books</h3>";
+
+
+    for (let i = 0; i < books.length; i++) {
+
+        output += `
+            <div class="book">
+                <b>Step ${i + 1}:</b>
+                ${books[i]}
+                <br><br>
+                <button onclick="alert('Book added to purchase list!')">
+                    🛒 Purchase Book
+                </button>
+            </div>
+        `;
+
+    }
+
+
+    output += `
+        <p>
+            <b>AI Suggestion:</b>
+            Follow the books in the given order to build
+            your skills step by step.
+        </p>
+    `;
+
+
+    result.innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>
