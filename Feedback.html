@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback - Online Bookstore</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .feedback-container {
+            width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: navy;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 13px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="feedback-container">
+
+    <h1>Help & Support</h1>
+
+    <p class="subtitle">
+        Have a complaint, query or feedback? Let us know.
+    </p>
+
+    <form id="feedbackForm">
+
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label>Type</label>
+        <select id="type">
+            <option value="">Select an option</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Query">Query</option>
+            <option value="Feedback">Feedback</option>
+        </select>
+
+        <label>Order ID</label>
+        <input type="text" id="orderId" placeholder="Enter your Order ID">
+
+        <label>Subject</label>
+        <input type="text" id="subject" placeholder="Enter subject">
+
+        <label>Write your complaint / query</label>
+        <textarea id="feedback"
+                  placeholder="Write your complaint or query here..."></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <div id="message"></div>
+
+</div>
+
+
+<script>
+
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let type = document.getElementById("type").value;
+    let feedback = document.getElementById("feedback").value;
+
+    let message = document.getElementById("message");
+
+    if (name === "" || email === "" || type === "" || feedback === "") {
+
+        message.innerHTML = "Please fill in all required fields.";
+        message.style.color = "red";
+
+        return;
+    }
+
+    message.innerHTML =
+        "Thank you, " + name +
+        "! Your " + type.toLowerCase() +
+        " has been submitted successfully.";
+
+    message.style.color = "green";
+
+    document.getElementById("feedbackForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>
