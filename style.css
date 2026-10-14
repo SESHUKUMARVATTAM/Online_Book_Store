@@ -1,9 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-    padding: 30px;
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    background-image: url("bki2.jpg");
 }
+
+
 
 .headline {
     color: green;
@@ -31,7 +37,7 @@ a:link {
 }
 
 a:visited {
-    color: yellow;
+    color: rgb(26, 26, 9);
 }
 
 a:active {
@@ -50,4 +56,21 @@ a:hover {
     width: 100%;
     height: 60px;
     background: #01120e;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("bki2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+aside a,
+aside a:link,
+aside a:visited,
+aside a:hover,
+aside a:active {
+    color: black;
 }

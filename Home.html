@@ -1,27 +1,230 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Online Book Store</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("bki2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #222;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+        }
+
+        header img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header h2 {
+            margin: 8px 0 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 15px;
+            background-color: #1c0303;
+        }
+
+        nav a,
+        nav a:link,
+        nav a:visited {
+            color: white !important;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a:active {
+        color: yellow !important;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        aside {
+            width: 220px;
+            flex-shrink: 0;
+            padding: 20px;
+            background-color: rgba(241, 234, 234, 0.9);
+            border-radius: 10px;
+        }
+
+        aside h2 {
+            text-align: center;
+        }
+
+        aside a {
+            display: block;
+            margin: 18px 0;
+            color: #0645ad;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        aside a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            flex: 1;
+            min-width: 0;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            line-height: 1.7;
+        }
+
+        main h2 {
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            .content {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+            }
+
+            main {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
-<frameset rows="15%,10%,75%" border="2" bordercolor="pink">
+<body>
 
-    <!-- Top Section -->
-    <frameset cols="20%,80%" border="2" bordercolor="red">
-        <frame src="Logo.html" scrolling="no">
-        <frame src="Title.html" scrolling="no">
-    </frameset>
+    <header>
+        <div>
+            <h1>ONLINE BOOKSTORE</h1>
+        </div>
+    </header>
 
-    <!-- Menu Section -->
-    <frame src="Menu.html" name="f2" scrolling="no">
+    <nav>
+        <a href="Home.html">HOME</a>
+        <a href="Catalogue.html">CATALOGUE</a>
+        <a href="Login.html">LOGIN</a>
+        <a href="Cart.html">CART</a>
+        <a href="AI.html">AI</a>
+        <a href="FEEDBACK.html">FEEDBACK</a>
+    </nav>
 
-    <!-- Main Section -->
-    <frameset cols="20%,80%" border="2" bordercolor="red">
-        <frame src="Branches.html" name="f31">
-        <frame src="HomeDes.html" name="f32">
-    </frameset>
+    <div class="content">
 
-</frameset>
+        <aside>
+            <h2>COURSES</h2>
 
+            <a href="Cse.html">CSE</a>
+            <a href="Ece.html">ECE</a>
+            <a href="Eee.html">EEE</a>
+            <a href="Civil.html">CIVIL</a>
+            <a href="FICTION.html">FICTION</a>
+            <a href="HISTORY.html">HISTORY</a>
+            <a href="FANTASY.html">FANTASY</a>
+            <a href="SCIENCE.html">SCIENCE</a>
+            <a href="BUSINESS.html">BUSINESS</a>
+
+        </aside>
+
+        <main>
+            <h2>DESCRIPTION</h2>
+
+            <p>
+                Welcome to our online bookstore, where the world of literature
+                comes alive at your fingertips. Discover a vast collection of
+                books, ranging from timeless classics to contemporary
+                bestsellers, all just a click away.
+            </p>
+
+            <p>
+                Explore our user-friendly website designed for book enthusiasts
+                of all kinds. Browse through an extensive catalog of genres,
+                from thrilling mysteries to heartwarming romance, thought-provoking
+                non-fiction to fantastical adventures.
+            </p>
+
+            <h3>Our Online Bookstore Offers:</h3>
+
+            <p>
+                <b>Extensive Selection:</b> Discover books for every reader,
+                whatever your taste or preference.
+            </p>
+
+            <p>
+                <b>Convenience:</b> Shop from the comfort of your home and
+                explore our collection whenever you want.
+            </p>
+
+            <p>
+                <b>User-Friendly Interface:</b> Find your favorite authors,
+                discover new ones, and explore personalized recommendations.
+            </p>
+
+            <p>
+                <b>Secure Transactions:</b> Enjoy a shopping experience designed
+                with your online security in mind.
+            </p>
+
+            <p>
+                <b>Fast and Reliable Delivery:</b> Get your books delivered
+                to your doorstep.
+            </p>
+
+            <p>
+                <b>Reviews and Ratings:</b> Use reader feedback to help choose
+                your next book.
+            </p>
+
+            <p>
+                Whether you are an avid reader, a casual browser, or a gift
+                shopper, our online bookstore is your destination for books.
+                Start exploring today!
+            </p>
+        </main>
+
+    </div>
+
+</body>
 </html>
+```
